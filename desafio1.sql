@@ -44,7 +44,7 @@ CREATE TABLE song(
 ) engine = InnoDB;
 
 CREATE TABLE following_artist(
-	user_id INT NOT NULL,
+	user_id INT NOT NULL, 
 	artist_id INT NOT NULL,
 	CONSTRAINT PRIMARY KEY(user_id, artist_id),
     FOREIGN KEY (user_id) REFERENCES user(id),
