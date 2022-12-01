@@ -5,13 +5,13 @@ CREATE DATABASE IF NOT EXISTS SpotifyClone;
 USE SpotifyClone;
 
 CREATE TABLE plan(
-	id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+	  id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     name VARCHAR(255) NOT NULL,
-    value DOUBLE NOT NULL
+    value DECIMAL(3, 2) NOT NULL
 ) engine = InnoDB;
 
 CREATE TABLE user(
-	id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+	  id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     name VARCHAR(255) NOT NULL,
     age INT NOT NULL,
     plan_id INT NOT NULL,
@@ -57,12 +57,12 @@ CREATE TABLE user_history_reproductions(
 	date_reproductions DATETIME NOT NULL,
 	PRIMARY KEY(user_id, song_id),
 	FOREIGN KEY (user_id) REFERENCES user(id),
-    FOREIGN KEY (song_id) REFERENCES song(id)
+  FOREIGN KEY (song_id) REFERENCES song(id)
 ) engine = InnoDB;
 
 INSERT INTO plan(name, value)
 VALUES
-  ('gratuito', 0),
+  ('gratuito', 0.00),
   ('familiar', 7.99),
   ('universitário', 5.99),
   ('pessoal', 6.99);
